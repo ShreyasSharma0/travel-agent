@@ -71,6 +71,8 @@ CONTACT LOGIC:
 - should_ask_contact = false when contact already collected, or score too low to justify asking
 - should_save_lead   = true  when booking_score >= 70 AND fields.name != null AND fields.phone != null
 
+CRITICAL: If the user shares name and phone but has NOT mentioned any travel destination, dates, or trip details, the booking_score must stay below 40. Contact details alone do not indicate travel intent.
+
 EDGE CASES:
 - If the user shares contact info very early (before showing travel intent), capture it in fields but keep booking_score low and should_save_lead false until intent is established.
 - If a user declines to share contact, set should_ask_contact = false for the rest of the conversation — do not ask again.
