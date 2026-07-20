@@ -31,10 +31,9 @@ export async function runChatbotTurn(userMessage, conversationHistory = []) {
     confidence                               = 'Low',
     fields                                   = {},
     should_ask_contact:   shouldAskContact    = false,
-    should_save_lead:     shouldSaveLead      = false,
     qualification_reason: qualificationReason = '',
   } = metrics
-
+  const shouldSaveLead    = bookingScore >= 70 && !!fields.name && !!fields.phone
   // ─── STEP 2: Reply (natural, temp 0.7) ──────────────────────────────────
   const replyPrompt = buildReplyPrompt({ bookingScore, shouldAskContact, fields })
 
