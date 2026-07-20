@@ -1,0 +1,59 @@
+.typing-wrap {
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+  margin-bottom: 8px;
+  animation: bubbleIn 200ms ease forwards;
+}
+
+@keyframes bubbleIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.typing-avatar {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: var(--dark-roast);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+.typing-bubble {
+  background: var(--surface-card);
+  border: 1px solid var(--border-soft);
+  border-radius: 16px 16px 16px 4px;
+  box-shadow: var(--shadow-sm);
+  padding: 14px 18px;
+  display: flex;
+  align-items: flex-end;
+  gap: 5px;
+  height: 42px;
+}
+
+/* Steam wisps — wavy vertical oscillation */
+.steam {
+  display: block;
+  width: 3px;
+  height: 14px;
+  border-radius: 2px;
+  background: var(--caramel);
+  opacity: 0.7;
+  animation: steamRise 1.1s ease-in-out infinite;
+  transform-origin: bottom center;
+}
+
+.steam--1 { animation-delay: 0s;    height: 10px; }
+.steam--2 { animation-delay: 0.18s; height: 15px; }
+.steam--3 { animation-delay: 0.36s; height: 10px; }
+
+@keyframes steamRise {
+  0%   { transform: scaleY(0.6) translateY(3px); opacity: 0.3; }
+  40%  { transform: scaleY(1.1) translateY(-2px); opacity: 0.8; }
+  70%  { transform: scaleY(0.9) translateY(1px); opacity: 0.6; }
+  100% { transform: scaleY(0.6) translateY(3px); opacity: 0.3; }
+}

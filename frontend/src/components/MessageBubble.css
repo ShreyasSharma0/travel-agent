@@ -1,0 +1,75 @@
+.bubble-wrap {
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+  animation: bubbleIn 200ms ease forwards;
+  margin-bottom: 8px;
+}
+
+@keyframes bubbleIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.bubble-wrap--user {
+  flex-direction: row-reverse;
+}
+
+.bubble-avatar {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: var(--dark-roast);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  flex-shrink: 0;
+  margin-bottom: 18px;
+}
+
+.bubble-col {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  max-width: 72%;
+}
+
+.bubble-wrap--user .bubble-col {
+  align-items: flex-end;
+}
+
+.bubble {
+  padding: 11px 15px;
+  border-radius: 16px;
+  line-height: 1.55;
+}
+
+.bubble--user {
+  background: var(--dark-roast);
+  color: var(--latte);
+  border-radius: 16px 16px 4px 16px;
+  font-size: 14px;
+}
+
+.bubble--assistant {
+  background: var(--surface-card);
+  color: var(--text-primary);
+  border-radius: 16px 16px 16px 4px;
+  border: 1px solid var(--border-soft);
+  box-shadow: var(--shadow-sm);
+  font-size: 14px;
+}
+
+.bubble-text {
+  margin: 0;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.bubble-ts {
+  font-size: 10px;
+  color: var(--text-muted);
+  opacity: 0.6;
+  padding: 0 4px;
+}

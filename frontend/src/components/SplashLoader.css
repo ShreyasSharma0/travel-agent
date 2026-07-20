@@ -1,0 +1,60 @@
+.shimmer {
+  background: linear-gradient(
+    90deg,
+    rgba(196, 135, 79, 0.08) 0%,
+    rgba(196, 135, 79, 0.18) 50%,
+    rgba(196, 135, 79, 0.08) 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.6s ease-in-out infinite;
+  border-radius: var(--radius-sm);
+}
+
+@keyframes shimmer {
+  from { background-position: 200% 0; }
+  to   { background-position: -200% 0; }
+}
+
+/* ─── Left panel skeleton ─────────────────────────────────────────────────── */
+.splash--left {
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.splash-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.splash-icon {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.splash-line {
+  height: 14px;
+  border-radius: 4px;
+}
+
+/* ─── Right panel skeleton ────────────────────────────────────────────────── */
+.splash--right {
+  padding: 24px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.splash-bubble {
+  height: 52px;
+  border-radius: 16px;
+  width: 72%;
+}
+
+.splash-bubble--user {
+  width: 55%;
+}

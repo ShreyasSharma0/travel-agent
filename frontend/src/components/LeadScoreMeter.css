@@ -1,0 +1,30 @@
+.lead-score-meter {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.lead-score-meter__gauge {
+  flex-shrink: 0;
+}
+
+.lead-score-meter__meta {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.lead-score-meter__title {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--caramel-soft);
+  opacity: 0.65;
+}
+
+.lead-score-meter__confidence {
+  font-size: 13px;
+  font-weight: 500;
+  transition: color var(--transition-normal);
+}
