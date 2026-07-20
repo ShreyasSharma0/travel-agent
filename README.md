@@ -10,43 +10,8 @@ A split-panel travel chatbot that detects buying intent, extracts structured lea
 |----------|--------------------------------|
 | Frontend | React 18 + Vite                |
 | Backend  | Node.js + Express              |
-| AI       | Google Gemini 2.0 Flash        |
+| AI       | llama 3.3 70b versatile        |
 | Database | Supabase (PostgreSQL)          |
-
----
-
-## Architecture
-
-```
-frontend/
-├── src/
-│   ├── App.jsx                  # React.lazy + Suspense on both panels
-│   ├── context/ChatContext.jsx  # useReducer — all state in one place
-│   ├── api/api.js               # single fetch wrapper
-│   └── components/
-│       ├── AppShell             # 38/62 split layout + coffee palette tokens
-│       ├── FieldsPanel          # read-only extracted fields, live updates
-│       ├── LeadScoreMeter       # SVG arc gauge
-│       ├── ChatPanel            # message list + auto-scroll
-│       ├── MessageBubble        # user/assistant styles
-│       ├── TypingIndicator      # steam wisps animation
-│       └── ChatInput            # auto-resize textarea
-
-backend/
-├── src/
-│   ├── index.js                 # Express + CORS
-│   ├── config/
-│   │   ├── gemini.js            # two model instances (temp 0.0 + 0.7)
-│   │   └── supabase.js          # Supabase client
-│   ├── routes/chat.routes.js    # POST /api/chat, GET /api/leads/:id
-│   ├── services/
-│   │   ├── gemini.service.js    # dual-prompt orchestration
-│   │   └── supabase.service.js  # lead upsert + fetch
-│   └── utils/
-│       ├── prompts.js           # ANALYSIS_PROMPT + buildReplyPrompt()
-│       └── parseJSON.js         # safe JSON parse + history formatter
-└── schema.sql                   # Supabase table definition
-```
 
 ---
 
@@ -121,7 +86,7 @@ Run `schema.sql` in the Supabase SQL editor.
 ```bash
 cd backend
 cp .env.example .env
-# fill in GEMINI_API_KEY, SUPABASE_URL, SUPABASE_SERVICE_KEY
+# fill in GROQ_API_KEY, SUPABASE_URL, SUPABASE_SERVICE_KEY
 npm install
 npm run dev
 ```
